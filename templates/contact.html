@@ -4,26 +4,63 @@
 <!-- Animated grainy background -->
 <div class="grain-bg"></div>
 
-<h1>Get In Touch</h1>
+<div class="contact-container">
+  <h1>Let's Connect</h1>
+  <p class="contact-intro">
+    Have a project in mind or just want to chat? Drop me a message!
+  </p>
 
-<p>I'd love to hear from you! Feel free to reach out.</p>
+  <form class="contact-form" method="POST" action="/contact">
+    <div class="form-group">
+      <input type="text" name="name" placeholder="Your Name" required />
+    </div>
 
-<h2>Contact Information</h2>
-<p>Email: your.email@example.com</p>
-<p>LinkedIn: <a href="#">Your LinkedIn Profile</a></p>
-<p>GitHub: <a href="#">Your GitHub Profile</a></p>
+    <div class="form-group">
+      <input type="email" name="email" placeholder="Your Email" required />
+    </div>
 
-<h2>Send a Message</h2>
-<form>
-  <label>Name:</label><br />
-  <input type="text" name="name" required /><br /><br />
+    <div class="form-group">
+      <input type="text" name="subject" placeholder="Subject" required />
+    </div>
 
-  <label>Email:</label><br />
-  <input type="email" name="email" required /><br /><br />
+    <div class="form-group">
+      <textarea
+        name="message"
+        rows="6"
+        placeholder="Your Message"
+        required
+      ></textarea>
+    </div>
 
-  <label>Message:</label><br />
-  <textarea name="message" rows="5" required></textarea><br /><br />
+    <button type="submit" class="submit-btn">
+      <span>Send Message</span>
+      <div class="btn-glow"></div>
+    </button>
+  </form>
 
-  <button type="submit">Send</button>
-</form>
+  <div class="social-links">
+    <a
+      href="{{ url_for('static', filename='files/Flavia_Morgulis_CV.pdf') }}"
+      download
+      class="social-link cv-link"
+    >
+      <span>📄 Download CV</span>
+    </a>
+    <a
+      href="https://github.com/FlaviaMorgulis"
+      target="_blank"
+      class="social-link"
+    >
+      <span>GitHub</span>
+    </a>
+    <a
+      href="https://www.linkedin.com/in/flavia-morgulis-418579221/"
+      target="_blank"
+      class="social-link"
+    >
+      <span>LinkedIn</span>
+    </a>
+  </div>
+</div>
+
 {% endblock %}

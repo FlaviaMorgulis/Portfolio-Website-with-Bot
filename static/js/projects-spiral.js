@@ -103,11 +103,9 @@ function drawConnections() {
 
 // Animation loop
 function animate() {
-  ctx.fillStyle = "rgba(10, 10, 30, 0.1)";
-  ctx.fillRect(0, 0, canvas.width, canvas.height);
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
 
   time += 0.01;
-
   particles.forEach((particle) => {
     particle.update();
     particle.draw();

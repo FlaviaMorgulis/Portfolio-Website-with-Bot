@@ -23,7 +23,7 @@ class Particle {
 
   update() {
     // Spiral rotation
-    this.angle += 0.01;
+    this.angle += 0.003;
 
     // Pulsing effect
     this.radius = this.baseRadius + Math.sin(time + this.index * 0.1) * 10;
@@ -71,14 +71,8 @@ function createSpiral() {
   const spiralArms = 5;
   const particlesPerArm = 40;
 
-  // Create multiple spirals at different positions
-  const spiralPositions = [
-    { x: 0.25, y: 0.3, scale: 0.8 },
-    { x: 0.75, y: 0.3, scale: 0.8 },
-    { x: 0.5, y: 0.5, scale: 1.2 },
-    { x: 0.2, y: 0.7, scale: 0.7 },
-    { x: 0.8, y: 0.7, scale: 0.7 },
-  ];
+  // Create single centered spiral 3x bigger
+  const spiralPositions = [{ x: 0.5, y: 0.5, scale: 3.6 }];
 
   spiralPositions.forEach((pos, spiralIndex) => {
     for (let arm = 0; arm < spiralArms; arm++) {

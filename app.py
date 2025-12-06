@@ -28,8 +28,27 @@ def skills():
     return render_template('skills.html')
 
 
-@app.route('/contact')
+@app.route('/contact', methods=['GET', 'POST'])
 def contact():
+    if request.method == 'POST':
+        name = request.form.get('name')
+        email = request.form.get('email')
+        subject = request.form.get('subject')
+        message = request.form.get('message')
+
+        # TODO: Add email functionality here (e.g., send email using Flask-Mail)
+        # For now, just print to console
+        print(f"New contact form submission:")
+        print(f"Name: {name}")
+        print(f"Email: {email}")
+        print(f"Subject: {subject}")
+        print(f"Message: {message}")
+
+        # You could also save to a database here
+        # Or send an email notification to yourself
+
+        return render_template('contact.html', success=True)
+
     return render_template('contact.html')
 
 
