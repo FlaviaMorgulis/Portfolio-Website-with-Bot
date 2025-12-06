@@ -65,18 +65,16 @@ class Particle {
 
 const particles = [];
 
-// Create spiral particles (single centered spiral)
+// Create Fibonacci spiral particles
 function createSpiral() {
-  const spiralArms = 5;
-  const particlesPerArm = 50;
+  const goldenRatio = 1.618033988749;
+  const totalParticles = 300;
 
-  for (let arm = 0; arm < spiralArms; arm++) {
-    for (let i = 0; i < particlesPerArm; i++) {
-      const angle =
-        (i / particlesPerArm) * Math.PI * 4 + (arm * Math.PI * 2) / spiralArms;
-      const radius = (i / particlesPerArm) * 200 + 20;
-      particles.push(new Particle(angle, radius, arm * particlesPerArm + i));
-    }
+  for (let i = 0; i < totalParticles; i++) {
+    // Fibonacci spiral formula
+    const angle = i * 2.39996323; // Golden angle in radians
+    const radius = Math.sqrt(i) * 15; // Square root spacing for even distribution
+    particles.push(new Particle(angle, radius, i));
   }
 }
 
