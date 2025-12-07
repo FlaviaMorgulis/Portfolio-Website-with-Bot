@@ -29,6 +29,7 @@
 
     <!-- Chat Widget -->
     <div id="chatWidget">
+      <div class="chat-tooltip">Ask the AI assistant</div>
       <button id="chatButton" aria-label="Open chat">
         <span class="chat-icon">💬</span>
       </button>
@@ -49,12 +50,28 @@
         </div>
 
         <div class="chat-input-container">
+          <button
+            id="voiceButton"
+            class="voice-btn"
+            aria-label="Voice input"
+            title="Click to speak"
+          >
+            <span class="mic-icon">🎤</span>
+          </button>
           <input
             type="text"
             id="chatInput"
-            placeholder="Type your question..."
+            placeholder="Type or speak your question..."
           />
           <button id="sendMessage">Send</button>
+          <button
+            id="speakerButton"
+            class="speaker-btn"
+            aria-label="Toggle voice responses"
+            title="Toggle voice responses"
+          >
+            <span class="speaker-icon">🔊</span>
+          </button>
         </div>
       </div>
     </div>
