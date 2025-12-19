@@ -1,4 +1,4 @@
-# Portfolio Website with AI Chatbot - Build Plan
+# Portfolio Website with AI Chatbot - Build Plan to be updated with architecture plan, UI prototype 
 
 ## Phase 1: Basic Setup ✓
 
@@ -32,16 +32,26 @@
   - [ ] Add microphone button for voice input
   - [ ] Add speaker toggle for voice responses
   - [ ] Implement Web Speech API integration
-- [ ] Create a file with your CV data (cv_data.txt or cv_data.json)
+- [ ] Create a file with CV data (cv_data.txt or cv_data.json)
 - [ ] Get OpenAI API key (or choose another AI service)
 - [ ] Update .env file with API key
 - [ ] Implement chatbot backend in app.py
 - [ ] Connect voice features to backend responses
 - [ ] Test chatbot with CV questions
 
-## Phase 5: Polish & Deploy
+## Phase 5: Content Preparation
 
-- [ ] Add your actual content (bio, projects, images)
+- [ ] Write bio and personal statement
+- [ ] List all work experiences with dates, roles, responsibilities
+- [ ] Document all projects (title, description, technologies, GitHub links, live demos)
+- [ ] List technical skills by category (languages, frameworks, tools, databases)
+- [ ] Add education history
+- [ ] Gather/create images (headshot, project screenshots, company logos)
+- [ ] Prepare CV data for chatbot (extract key info into structured format)
+
+## Phase 6: Polish & Deploy
+
+- [ ] Add all content to the website pages
 - [ ] Test all pages and functionality
 - [ ] Add favicon and meta tags
 - [ ] Write README.md with setup instructions
