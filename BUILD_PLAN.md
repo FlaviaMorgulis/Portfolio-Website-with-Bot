@@ -2,36 +2,36 @@
 
 ## Phase 1: Basic Setup ✓
 
-- [ ] Create project folders (templates, static/css, static/js, static/images)
-- [ ] Create app.py
-- [ ] Create requirements.txt
-- [ ] Add .gitignore
-- [ ] Create basic index.html
+- [✓ ] Create project folders (templates, static/css, static/js, static/images)
+- [✓ ] Create app.py
+- [✓ ] Create requirements.txt
+- [ ✓] Add .gitignore
+- [✓ ] Create basic index.html
 
 ## Phase 2: HTML Templates
 
-- [ ] Create base.html (template that other pages will extend)
-- [ ] Complete index.html (home page with introduction)
-- [ ] Create about.html (your background, skills, education)
-- [ ] Create projects.html (showcase your projects)
-- [ ] Create contact.html (contact form and info)
+- [✓ ] Create base.html (template that other pages will extend)
+- [✓ ] Complete index.html (home page with introduction)
+- [ ✓] Create about.html (your background, skills, education)
+- [✓ ] Create projects.html (showcase your projects)
+- [✓ ] Create contact.html (contact form and info)
 
 ## Phase 3: Styling
 
-- [ ] Create main CSS file (style.css)
-- [ ] Add navigation bar styling
-- [ ] Style the home page
-- [ ] Style about, projects, and contact pages
-- [ ] Make it responsive (mobile-friendly)
+- [✓ ] Create main CSS file (style.css)
+- [ ✓] Add navigation bar styling
+- [ ✓] Style the home page
+- [✓ ] Style about, projects, and contact pages
+- [✓ ] Make it responsive (mobile-friendly)
 
 ## Phase 4: Chatbot Widget
 
-- [ ] Create chatbot UI (chat window HTML/CSS)
-- [ ] Add JavaScript for chat interactions
-- [ ] Add voice interface (speech-to-text and text-to-speech)
-  - [ ] Add microphone button for voice input
-  - [ ] Add speaker toggle for voice responses
-  - [ ] Implement Web Speech API integration
+- [✓ ] Create chatbot UI (chat window HTML/CSS)
+- [✓ ] Add JavaScript for chat interactions
+- [✓ ] Add voice interface (speech-to-text and text-to-speech)
+  - [✓ ] Add microphone button for voice input
+  - [✓ ] Add speaker toggle for voice responses
+  - [ ✓] Implement Web Speech API integration
 - [ ] Create a file with CV data (cv_data.txt or cv_data.json)
 - [ ] Get OpenAI API key (or choose another AI service)
 - [ ] Update .env file with API key
