@@ -1186,14 +1186,17 @@ footer {
   top: 50%;
   transform: translateY(-50%);
   padding: 40px;
+  padding-top: 80px;
   max-width: 500px;
+  max-height: 90vh;
+  overflow-y: auto;
   z-index: 2;
   text-align: left;
 }
 
 .skills-content h1 {
-  font-size: 3em;
-  margin-bottom: 40px;
+  font-size: 2.5em;
+  margin-bottom: 30px;
   color: #fff;
   font-weight: 700;
 }
