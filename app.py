@@ -3,6 +3,9 @@ from openai import OpenAI
 import json
 import os
 from dotenv import load_dotenv
+from apscheduler.schedulers.background import BackgroundScheduler
+import requests
+import atexit
 
 # Load environment variables
 load_dotenv()
@@ -11,6 +14,27 @@ app = Flask(__name__)
 
 # Initialize OpenAI client
 client = OpenAI(api_key=os.getenv('OPENAI_API_KEY'))
+
+# Keep-alive scheduler to prevent Render free tier from sleeping
+
+
+def keep_alive():
+    """Ping the app to keep it awake on Render free tier."""
+    render_url = os.getenv('RENDER_EXTERNAL_URL')
+    if render_url:
+        try:
+            response = requests.get(f"{render_url}/health", timeout=10)
+            print(f"Keep-alive ping: {response.status_code}")
+        except Exception as e:
+            print(f"Keep-alive ping failed: {e}")
+
+
+# Start scheduler only in production
+if os.getenv('FLASK_ENV') == 'production' or os.getenv('RENDER'):
+    scheduler = BackgroundScheduler()
+    scheduler.add_job(func=keep_alive, trigger="interval", minutes=14)
+    scheduler.start()
+    atexit.register(lambda: scheduler.shutdown())
 
 # Load CV data
 
@@ -48,6 +72,12 @@ SYSTEM_PROMPT = load_system_prompt()
 @app.route('/')
 def home():
     return render_template('index.html')
+
+
+@app.route('/health')
+def health():
+    """Health check endpoint for keep-alive pings."""
+    return jsonify({'status': 'healthy'}), 200
 
 
 @app.route('/about')

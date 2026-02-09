@@ -42,6 +42,7 @@ FLASK_ENV=production
      - `EMAIL_USER` = flaviaefmorgulis@gmail.com
      - `EMAIL_PASSWORD` = your Gmail app password
      - `FLASK_ENV` = production
+     - `RENDER_EXTERNAL_URL` = your Render URL (e.g., https://flavia-portfolio.onrender.com) - **Required for keep-alive**
 
 5. **Deploy**
    - Click "Create Web Service"
@@ -56,7 +57,12 @@ FLASK_ENV=production
 
 ## Important Notes
 
-- **Free Tier**: Render's free tier will spin down inactive services after 15 minutes. Consider upgrading to keep it always running.
+- **Free Tier**: Render's free tier will spin down inactive services after 15 minutes. The app now includes an automatic keep-alive scheduler that pings itself every 14 minutes.
+- **Keep-Alive Setup**: Set the `RENDER_EXTERNAL_URL` environment variable in Render to your app's URL for the self-ping to work.
+- **Alternative Keep-Alive Options**:
+  1. **GitHub Actions** (recommended): Push the `.github/workflows/keep-alive.yml` file and add `RENDER_APP_URL` as a repository secret
+  2. **External Service**: Use [cron-job.org](https://cron-job.org) to ping `https://your-app.onrender.com/health` every 14 minutes
+  3. **Local Script**: Run `python keep_alive.py` on any always-on machine
 - **Email Setup**: Make sure you've generated a Gmail App Password (not regular password)
 - **Static Files**: Render should serve your static files automatically
 - **Logs**: Check Render's logs if something isn't working
